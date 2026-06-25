@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, MapPin, Send, Phone } from 'lucide-react';
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 
 const Contact = ({ onShowToast }) => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -29,10 +30,17 @@ const Contact = ({ onShowToast }) => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
 
     if (errors[name]) {
-      setErrors({ ...errors, [name]: '' });
+      setErrors({
+        ...errors,
+        [name]: '',
+      });
     }
   };
 
@@ -43,19 +51,19 @@ const Contact = ({ onShowToast }) => {
     setIsSubmitting(true);
 
     const data = {
-      access_key: "979b3728-1365-46c9-8ba7-4ddd94dc9c66",
+      access_key: '979b3728-1365-46c9-8ba7-4ddd94dc9c66',
       name: formData.name,
       email: formData.email,
       message: formData.message,
-      subject: "New message from portfolio website",
+      subject: 'New message from portfolio website',
     };
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
         },
         body: JSON.stringify(data),
       });
@@ -77,7 +85,9 @@ const Contact = ({ onShowToast }) => {
 
   return (
     <section id="contact" className="section contact-section">
-      <h2 className="section-title">Get In <span>Touch</span></h2>
+      <h2 className="section-title">
+        Get In <span>Touch</span>
+      </h2>
 
       <div className="grid-2">
         <div className="contact-info">
@@ -93,6 +103,7 @@ const Contact = ({ onShowToast }) => {
                 <div className="contact-detail-icon">
                   <Mail size={18} />
                 </div>
+
                 <div>
                   <h4>Email Me</h4>
                   <a href="mailto:a_sahnounehay@estin.dz" className="contact-detail-link">
@@ -105,6 +116,7 @@ const Contact = ({ onShowToast }) => {
                 <div className="contact-detail-icon">
                   <Phone size={18} />
                 </div>
+
                 <div>
                   <h4>Phone</h4>
                   <a href="tel:+2130657304120" className="contact-detail-link">
@@ -117,6 +129,7 @@ const Contact = ({ onShowToast }) => {
                 <div className="contact-detail-icon">
                   <MapPin size={18} />
                 </div>
+
                 <div>
                   <h4>My Location</h4>
                   <p className="contact-detail-text">Algéria, Sétif</p>
@@ -126,13 +139,26 @@ const Contact = ({ onShowToast }) => {
 
             <div className="contact-socials-panel">
               <h4>Find me on</h4>
+
               <div className="contact-socials-row">
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="contact-social-btn glass" aria-label="GitHub">
-                  GitHub
+                <a
+                  href="https://github.com/dodosahnoune"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-social-btn glass"
+                  aria-label="GitHub"
+                >
+                  <FaGithub size={22} />
                 </a>
 
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="contact-social-btn glass" aria-label="LinkedIn">
-                  LinkedIn
+                <a
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-social-btn glass"
+                  aria-label="LinkedIn"
+                >
+                  <FaLinkedinIn size={22} />
                 </a>
               </div>
             </div>
@@ -142,7 +168,10 @@ const Contact = ({ onShowToast }) => {
         <div className="contact-form-container">
           <form className="contact-form-card glass" onSubmit={handleSubmit} noValidate>
             <div className="form-group">
-              <label htmlFor="name" className="form-label">Your Name</label>
+              <label htmlFor="name" className="form-label">
+                Your Name
+              </label>
+
               <input
                 type="text"
                 id="name"
@@ -152,11 +181,15 @@ const Contact = ({ onShowToast }) => {
                 className={`form-control ${errors.name ? 'input-error' : ''}`}
                 placeholder="Abdelwadoude"
               />
+
               {errors.name && <span className="error-message">{errors.name}</span>}
             </div>
 
             <div className="form-group">
-              <label htmlFor="email" className="form-label">Email Address</label>
+              <label htmlFor="email" className="form-label">
+                Email Address
+              </label>
+
               <input
                 type="email"
                 id="email"
@@ -166,11 +199,15 @@ const Contact = ({ onShowToast }) => {
                 className={`form-control ${errors.email ? 'input-error' : ''}`}
                 placeholder="example@domain.com"
               />
+
               {errors.email && <span className="error-message">{errors.email}</span>}
             </div>
 
             <div className="form-group">
-              <label htmlFor="message" className="form-label">Message</label>
+              <label htmlFor="message" className="form-label">
+                Message
+              </label>
+
               <textarea
                 id="message"
                 name="message"
@@ -180,6 +217,7 @@ const Contact = ({ onShowToast }) => {
                 className={`form-control ${errors.message ? 'input-error' : ''}`}
                 placeholder="Hi, I want to discuss a portfolio website development project..."
               ></textarea>
+
               {errors.message && <span className="error-message">{errors.message}</span>}
             </div>
 
