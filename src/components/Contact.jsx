@@ -158,7 +158,7 @@ const Contact = ({ onShowToast }) => {
                   className="contact-social-btn glass"
                   aria-label="LinkedIn"
                 >
-                  <FaLinkedinIn size={22} />
+                 <FaLinkedinIn size={22} />
                 </a>
               </div>
             </div>
