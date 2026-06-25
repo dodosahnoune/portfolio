@@ -43,7 +43,7 @@ const Contact = ({ onShowToast }) => {
     setIsSubmitting(true);
 
     const data = {
-      access_key: "e1539b47-ff64-4533-ab3c-2c0c3b7f177a",
+      access_key: "979b3728-1365-46c9-8ba7-4ddd94dc9c66",
       name: formData.name,
       email: formData.email,
       message: formData.message,
