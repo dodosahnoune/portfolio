@@ -329,7 +329,128 @@ a {
   transform: translateY(0);
   opacity: 1;
 }
+/* ================= RESPONSIVE DESIGN ================= */
 
+/* Tablets */
+@media (max-width: 1024px) {
+  .navbar-container {
+    padding: 0 24px;
+  }
+
+  .hero-title {
+    font-size: 4rem;
+  }
+
+  .hero-subtitle {
+    font-size: 2rem;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .section {
+    padding: 80px 24px;
+  }
+}
+
+/* Phones */
+@media (max-width: 768px) {
+  .navbar {
+    height: 72px;
+  }
+
+  .navbar-desktop-menu {
+    display: none;
+  }
+
+  .navbar-mobile-toggle {
+    display: flex;
+  }
+
+  .hero-section {
+    padding: 120px 20px 60px;
+    min-height: 100vh;
+  }
+
+  .hero-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    line-height: 1.1;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-socials {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .section-title {
+    font-size: 2.4rem;
+  }
+
+  .contact-form-card,
+  .contact-info-card,
+  .code-editor {
+    width: 100%;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.4rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+  }
+
+  .hero-badge {
+    font-size: 0.75rem;
+    padding: 8px 12px;
+  }
+
+  .btn {
+    padding: 14px 20px;
+    font-size: 0.9rem;
+  }
+
+  .section {
+    padding: 70px 16px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .contact-detail-item {
+    align-items: flex-start;
+  }
+}
 /* Responsive Grid/Flex Utilities */
 .grid-2 {
   display: grid;
